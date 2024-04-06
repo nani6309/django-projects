@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}view task page{% endblock title %}
+<script src="https://kit.fontawesome.com/763d341fab.js" crossorigin="anonymous"></script>       
+
+{% block style %}
+<style>
+    .nan{
+        position: relative;
+        margin-left: 40rem;
+    }
+    #o{
+        text-align: center;
+        padding: 1rem;
+    }
+    #n{
+        color: red;
+        font-size: 30px;
+    }
+    #m{
+        color: blue;
+        font-size: 30px;
+    }
+    
+</style>
+
+{% endblock style %}
+{% block body %}
+<div class="table-responsive-md">
+<table class="table" style="height: 90px;" >
+    {% csrf_token %}
+    <thead>
+        <tr>
+            <th id="o" scope="col">Task No</th>
+            <th id="o" scope="col" >Task Name</th>
+            <th id="o" scope="col" >Task Date</th>
+            <th id="o" scope="col" >Task Time</th>
+            <th id="o" scope="col" >Modify</th>
+            <th id="o" scope="col" >Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in tasks %}
+        <tr>
+            <td id="o" >{{forloop.counter}}</td>
+            <td id="o" >{{i.name}}</td>
+            <td id="o" >{{i.date}}</td>
+            <td id="o" >{{i.time}}</td>
+            <td id="o">
+                <a href="{% url "editpage" i.id %}">
+                    <i class='bx bx-edit' id="m" > </i>
+                </a>
+            </td>
+            <td id="o">
+                <a href="{% url "deletetaskpage" i.id %}">
+                    <i class="fa-solid fa-trash" id="n"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </div>
+</table><br>
+<a href="{% url "alltask" %}" class='nan'>
+    <button>Clear all Tasks</button>
+</a>
+{% endblock body %}

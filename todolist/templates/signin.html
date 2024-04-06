@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% block title %}signin page{% endblock title %}
+{% block style %}
+<style>
+.a{
+    height: 390px;
+    width: 350px;
+    position: relative;
+    top: 5px;
+    left: 580px;
+    border: ridge linen;
+    background-color: white;
+}
+.b{
+    position: absolute;
+    top: 40px;
+    left: 620px;
+    width: 300px;
+}
+.c{
+    position: absolute;
+    top: 150px;
+    left: 650px;
+    height: 30px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 250px;
+    border: ridge;
+}
+.d{
+    position: absolute;
+    top: 200px;
+    left: 650px;
+    height: 30px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 250px;
+    border: ridge;
+}
+.e{
+    position: absolute;
+    top: 250px;
+    left: 650px;
+    width: 170px;
+    height: 30px;
+    background-color: steelblue;
+    border-radius: 5px;
+    width: 250px;
+   border: none;
+   color: white;
+   font-weight: 700;
+}
+.f{
+    width: 65px;
+    position: absolute;
+    top: 290px;
+    left: 690px;
+}
+.g{
+    width: 65px;
+    position: absolute;
+    top: 290px;
+    left: 795px;
+}
+.h{
+    position: absolute;
+    top: 290px;
+    left: 765px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.i{
+    position: absolute;
+    top: 320px;
+    left: 719px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    color: dimgray;
+}
+.bx{
+    position: absolute;
+    top: 317px;
+    left: 696px;
+    color: dodgerblue;
+    font-size: 25px;
+}
+.j{
+    position: absolute;
+    top: 360px;
+    left: 725px;
+    text-decoration: none;
+    color: dimgray;
+}
+.k{
+    height: 30px;
+    width: 350px;
+    position: relative;
+    top: 15px;
+    left: 580px;
+    border: ridge linen;
+    background-color: white;
+    
+}
+.l{
+    position: absolute;
+    top: 409px;
+    left: 660px;
+}
+.m{
+    position: absolute;
+    text-decoration: none;
+    top: 409px;
+    left: 835px;
+    color: blue;
+}
+.n{
+    position: absolute;
+    top: 445px;
+    left: 735px;
+}
+.o{
+    position: absolute;
+    top: 500px;
+    left: 611px;
+}
+</style>
+{% endblock style %}
+{% block body %}
+<form  method="post">
+    {% csrf_token %}
+    {% load static %}
+    <div class="all">
+        <div class="a"></div>
+        <img class="b" src="{% static "instafont.png" %}" alt="No Image Found">
+        <form method="post">
+        <input class="c" type="text" name="username" placeholder="Enter Your Username" required>
+        <input class="d" type="password" name="password" placeholder="Password" name="" id="" required>
+       <button class="e">Log in</button>
+        </form>
+        <hr class="f">
+        <hr class="g">
+        <div class="h">OR</div>
+        <a class="i" target="_blank" href="#">Login with Form </a>
+        <i class='bx bxl-facebook'></i>
+        <a class="j" target="_blank" href="#"> Forgot Password ?</a>
+        <div class="k"></div>
+        <div class="l">Don't have an account?</div>
+        <a class="m" target="_blank" href="{% url "signupPage" %}"><b>Sign up</b></a>
+        <p class="n">Get the app.</p>
+        <img class="o" src="{% static "getin.png" %}" alt="No Image Found">
+    </div>
+</form>
+
+{% endblock body %}
+
+
+
+
